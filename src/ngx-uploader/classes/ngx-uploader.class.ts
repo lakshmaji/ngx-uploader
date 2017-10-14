@@ -239,7 +239,7 @@ export class NgUploaderService {
         Object.keys(headers).forEach(key => xhr.setRequestHeader(key, headers[key]));
 
         this.serviceEvents.emit({ type: 'start', file: file });
-        xhr.send(file.form);
+        xhr.send(uploadFile);
       } catch (e) {
         observer.complete();
       }
