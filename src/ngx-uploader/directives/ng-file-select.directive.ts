@@ -40,7 +40,9 @@ export class NgFileSelectDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.el.removeEventListener('change', this.fileListener, false);
+    if(this.el) {
+      this.el.removeEventListener('change', this.fileListener, false);      
+    }
     this._sub.forEach(sub => sub.unsubscribe());
   }
 

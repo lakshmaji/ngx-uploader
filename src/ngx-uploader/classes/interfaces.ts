@@ -62,4 +62,5 @@ export interface UploadInput {
   data?: { [key: string]: string | Blob };
   headers?: { [key: string]: string };
   withCredentials?: boolean;
+  concurrency?: number; // concurrency of how many files can be uploaded in parallel (default is 0 which means unlimited)
 }
